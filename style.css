@@ -1,0 +1,111 @@
+/* style.css - Tokyo Night Theme with larger admin panel */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1b26; /* Tokyo Night background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #c0caf5; /* Light text color */
+}
+
+.container {
+  width: 120%;
+  max-width: 1500px; /* Increase width of the container */
+  background: #24283b; /* Darker panel background */
+  padding: 30px; /* Increase padding for a larger feel */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem; /* Increase font size */
+  color: #c0caf5; /* Light text color */
+}
+
+.form-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-container input, .form-container button, .form-container textarea {
+  padding: 12px; /* Increase padding for inputs and button */
+  font-size: 1rem; /* Larger font for inputs */
+  border-radius: 6px;
+  border: 1px solid #414868;
+  background-color: #1a1b26;
+  color: #c0caf5;
+}
+
+.form-container textarea {
+  width: 100%;
+  resize: vertical;
+  height: 100px; /* Larger height for textarea */
+}
+
+button {
+  background-color: #7aa2f7; /* Tokyo Night blue */
+  color: #1a1b26;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #6183bb;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.event-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px; /* Increase padding for event items */
+  font-size: 1rem; /* Larger font size for events */
+  background-color: #2a2e42;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  color: #c0caf5;
+}
+
+.event-item button {
+  background-color: #f7768e;
+  border: none;
+  color: #1a1b26;
+  padding: 8px 15px; /* Larger button size */
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.event-item button:hover {
+  background-color: #bb4a5a;
+}
+
+.admin-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem; /* Larger font size for the link */
+  color: #7aa2f7;
+  text-decoration: none;
+}
+
+.admin-link:hover {
+  color: #6183bb;
+  text-decoration: underline;
+}
