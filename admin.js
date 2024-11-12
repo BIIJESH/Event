@@ -10,24 +10,30 @@ function loadEventsAndNotices() {
 
   // Display upcoming events
   eventList.forEach((event, index) => {
-    const eventItem = document.createElement("li");
+    const eventItem = document.createElement("div");
     eventItem.className = "event-item";
     eventItem.innerHTML = `
-      <span><strong>${event.name}</strong> - ${event.date}</span>
-      <p>${event.description}</p>
-      <button onclick="removeEvent(${index}, false)">Remove</button>
+          <div>
+          <h3>${event.name} </h3>
+          <button class="remove" onclick="removeEvent(${index}, false)">Remove</button>
+          </div>
+      <p>${event.date}</p>
+      <h6>${event.description}</h6>
     `;
     eventListElement.appendChild(eventItem);
   });
 
   // Display past events
   pastEventList.forEach((event, index) => {
-    const eventItem = document.createElement("li");
+    const eventItem = document.createElement("div");
     eventItem.className = "event-item past-event";
     eventItem.innerHTML = `
-      <span><strong>${event.name}</strong> - ${event.date}</span>
-      <p>${event.description}</p>
-      <button onclick="removeEvent(${index}, true)">Remove</button>
+          <div>
+          <h3>${event.name} </h3>
+          <button class="remove" onclick="removeEvent(${index}, true)">Remove</button>
+          </div>
+      <p>${event.date}</p>
+      <h6>${event.description}</h6>
     `;
     eventListElement.appendChild(eventItem);
   });
@@ -38,11 +44,11 @@ function loadEventsAndNotices() {
   noticeListElement.innerHTML = "";
 
   noticeList.forEach((notice, index) => {
-    const noticeItem = document.createElement("li");
+    const noticeItem = document.createElement("div");
     noticeItem.className = "notice-item";
     noticeItem.innerHTML = `
-      <p>${notice}</p>
-      <button onclick="removeNotice(${index})">Remove</button>
+      <h4>${notice}</h4>
+      <button class="remove" onclick="removeNotice(${index})">Remove</button>
     `;
     noticeListElement.appendChild(noticeItem);
   });
@@ -63,7 +69,7 @@ function addEvent() {
   const event = {
     name: eventName,
     date: eventDate,
-    description: eventDescription
+    description: eventDescription,
   };
 
   if (isPastEvent) {

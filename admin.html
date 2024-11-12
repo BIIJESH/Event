@@ -1,43 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Admin Panel</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
 
-    <!-- Event Form -->
-    <div class="form-container">
-      <h2>Add Event</h2>
-      <input type="text" id="event-name" placeholder="Event Name">
-      <input type="date" id="event-date">
-      <textarea id="event-description" placeholder="Event Description"></textarea>
-      <label>
-        <input type="checkbox" id="is-past-event"> Mark as Past Event
-      </label>
-      <button onclick="addEvent()">Add Event</button>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="header-title">Admin Panel</h1>
+      </div>
+
+      <div class="form-section">
+        <div class="form-card">
+          <h2 class="form-title">Event</h2>
+          <input
+            class="input-field"
+            type="text"
+            id="event-name"
+            placeholder="Event Name"
+          />
+          <input class="input-field" type="date" id="event-date" />
+          <textarea
+            class="textarea-field"
+            id="event-description"
+            placeholder="Event Description"
+          ></textarea>
+          <div class="checkbox-group">
+            <input type="checkbox" id="is-past-event" class="checkbox-input" />
+            <label for="is-past-event" class="checkbox-label">
+              Mark as Past Event
+            </label>
+          </div>
+          <button class="action-button" onclick="addEvent()">Add Event</button>
+        </div>
+
+        <!-- Notice Form -->
+        <div class="form-card">
+          <h2 class="form-title">Notice</h2>
+          <textarea
+            class="textarea-field"
+            rows="6"
+            id="notice-content"
+            placeholder="Notice Content"
+          ></textarea>
+          <button class="action-button" onclick="addNotice()">
+            Add Notice
+          </button>
+        </div>
+      </div>
+
+      <!-- Display Events and Notices -->
+      <div class="display-section">
+        <div class="display-cards">
+          <div class="display-card">
+            <h2 class="display-title">All Events</h2>
+            <div id="event-list"></div>
+          </div>
+          <div class="display-card">
+            <h2 class="display-title">All Notices</h2>
+            <div id="notice-list"></div>
+          </div>
+        </div>
+      </div>
+      <div class="link-container">
+        <a href="event.html" class="link-button"> Go to Event Page </a>
+      </div>
     </div>
-
-    <!-- Notice Form -->
-    <div class="form-container">
-      <h2>Add Notice</h2>
-      <textarea id="notice-content" placeholder="Notice Content"></textarea>
-      <button onclick="addNotice()">Add Notice</button>
-    </div>
-
-    <!-- Display Events and Notices -->
-    <h2>All Events</h2>
-    <ul id="event-list"></ul>
-
-    <h2>All Notices</h2>
-    <ul id="notice-list"></ul>
-
-    <a href="event.html" class="admin-link">Go to Event Page</a>
-  </div>
-  <script src="admin.js"></script>
-</body>
+    <script src="admin.js"></script>
+  </body>
 </html>

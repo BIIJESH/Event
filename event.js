@@ -14,30 +14,32 @@ function loadContent() {
 
   // Display notices
   noticeList.forEach((notice) => {
-    const noticeItem = document.createElement("li");
+    const noticeItem = document.createElement("div");
     noticeItem.className = "notice-item";
-    noticeItem.innerHTML = `<p>${notice}</p>`;
+    noticeItem.innerHTML = `<h4>${notice}</h4>`;
     noticeListElement.appendChild(noticeItem);
   });
 
   // Display upcoming events
   eventList.forEach((event) => {
-    const eventItem = document.createElement("li");
+    const eventItem = document.createElement("div");
     eventItem.className = "event-item";
     eventItem.innerHTML = `
-      <span><strong>${event.name}</strong> - ${event.date}</span>
-      <p>${event.description}</p>
+          <h3>${event.name} </h3>
+      <p>${event.date}</p>
+      <h6>${event.description}</h6>
     `;
     eventListElement.appendChild(eventItem);
   });
 
   // Display past events
   pastEventList.forEach((event) => {
-    const eventItem = document.createElement("li");
+    const eventItem = document.createElement("div");
     eventItem.className = "event-item past-event";
     eventItem.innerHTML = `
-      <span><strong>${event.name}</strong> - ${event.date}</span>
-      <p>${event.description}</p>
+      <h3>${event.name} </h3>
+      <p>${event.date}</p>
+      <h6>${event.description}</h6>
     `;
     pastEventListElement.appendChild(eventItem);
   });
